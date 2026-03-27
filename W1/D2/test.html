@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Day 1 S1: DOCTYPE & Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rakesh K R Portfolio">
+    <title>Rakesh K R | Portfolio</title>
+    
+    <!-- Day 3 S1: Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Day 3 S1: CSS Reset, Variables, Universal Selector, Comments */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root { /* Day 3 S2: CSS Variables */
+            --primary: #2563eb;
+            --text: #333;
+            --bg: #f5f5f5;
+            --white: #fff;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        
+        /* Day 3 S1: Element & Class Selectors */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        /* Day 4 S1: Flexbox Navigation - Responsive by default */
+        nav {
+            display: flex;
+            flex-wrap: wrap; /* Day 4 S1: flex-wrap */
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        /* Day 1 S2: Unordered Lists & Links */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+            flex-wrap: wrap; /* Responsive wrapping */
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+        }
+        
+        .nav-links a:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Day 4 S1: Hero - Flexbox Centering */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 4rem 2rem;
+            background: linear-gradient(to right, var(--primary), #3b82f6);
+            color: white;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -1px; /* Day 3 S1 */
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+        
+        /* Day 3 S2: inline-block */
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+        }
+        
+        section {
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        /* Day 1 S1: Semantic Article */
+        .about article {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* Day 4 S2: CSS Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+        
+        /* Day 4 S1: Flexbox Projects */
+        .projects-container {
+            display: flex;
+            flex-direction: column; /* Stacks naturally on mobile */
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .project-card {
+            background: var(--white);
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .project-image {
+            height: 160px;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        /* Day 2 S1: Complete Form */
+        .contact-form {
+            background: var(--white);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Day 2 S1: Fieldset & Legend */
+        fieldset {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        legend {
+            font-weight: 600;
+            color: var(--primary);
+            padding: 0 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        input[type="radio"] {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        /* Day 2 S2: Complete Table */
+        .experience-table {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-collapse: collapse;
+        }
+        
+        .experience-table th,
+        .experience-table td {
+            padding: 1rem;
+            text-align: left;
+        }
+        
+        .experience-table th {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Day 1 S2: Image */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 1rem;
+            border: 4px solid var(--white);
+            background: rgba(255,255,255,0.3);
+        }
+        
+        /* Day 3 S2: Inline-block Tags */
+        .tags {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            margin: 0 0.5rem 0.5rem 0;
+            border-radius: 20px;
+        }
+        
+        /* Day 1 S1: Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Day 1 S1: Semantic Elements -->
+    <header>
+        <nav>
+            <a href="#home" class="logo">Rakesh K R</a>
+            <!-- Day 1 S2: UL List -->
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Day 4 S1: Hero Flexbox -->
+    <section id="home" class="hero">
+        <h1>Rakesh K R</h1>
+        <!-- Day 1 S2: Image with alt -->
+        <img src="profile.jpg" alt="Rakesh K R professional photo" class="profile-img">
+        <p>Software Developer<br>MERN Stack | Java | Python</p>
+        <a href="#contact" class="cta-button">Contact Me</a>
+    </section>
+
+    <!-- Day 1 S1: Article -->
+    <section id="about">
+        <h2>About</h2>
+        <article class="about">
+            <h3>Full Stack Developer</h3>
+            <p>Experienced in web development and technical training. Specializing in full-stack applications and database systems.</p>
+            <!-- Day 3 S2: Inline-block -->
+            <div class="tags">
+                <span class="tag">Full Stack</span>
+                <span class="tag">Backend</span>
+                <span class="tag">Database</span>
+            </div>
+        </article>
+    </section>
+
+    <!-- Day 4 S2: Grid -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>MERN Stack</h3>
+                <p>React, Node.js, Express, MongoDB</p>
+            </div>
+            <div class="skill-card">
+                <h3>Java</h3>
+                <p>Backend Development</p>
+            </div>
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Automation Scripts</p>
+            </div>
+            <div class="skill-card">
+                <h3>Databases</h3>
+                <p>MySQL, MongoDB</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 4 S1: Flexbox + Day 2 S2: Table -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-image">RS</div>
+                <div class="project-content">
+                    <h3>Railway System</h3>
+                    <p>Java application with MySQL</p>
+                    <!-- Day 1 S2: target="_blank" -->
+                    <a href="https://example.com" target="_blank" class="cta-button">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">BP</div>
+                <div class="project-content">
+                    <h3>Banking Portal</h3>
+                    <p>MERN stack application</p>
+                    <a href="https://example.com" target="_blank" class="cta-button">View Project</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Day 2 S2: Table with colspan/rowspan -->
+        <table class="experience-table">
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th colspan="2">Technology</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Railway System</td>
+                    <td>Java</td>
+                    <td>MySQL</td>
+                </tr>
+                <tr>
+                    <td>Banking Portal</td>
+                    <td rowspan="2">MERN Stack</td>
+                    <td>MongoDB</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Day 2 S1: Complete Form -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <form class="contact-form">
+            <fieldset>
+                <legend>Contact Form</legend>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Type</label>
+                    <select name="type">
+                        <option value="project">Project</option>
+                        <option value="training">Training</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Priority</label>
+                    <!-- Day 2 S1: Radio -->
+                    <label><input type="radio" name="priority" value="high"> High</label>
+                    <label><input type="radio" name="priority" value="normal"> Normal</label>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+            </fieldset>
+            <button type="submit" class="submit-btn">Send</button>
+        </form>
+    </section>
+
+    <!-- Day 1 S1: Footer -->
+    <footer>
+        <p>&copy; 2026 Rakesh K R</p>
+    </footer>
+</body>
+</html>
