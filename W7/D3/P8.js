@@ -1,5 +1,13 @@
 // JWT flow with login, refresh-style logic
 // and secure verification
+// Example login:
+// curl -X POST http://localhost:4051/login -H "Content-Type: application/json" -d "{\"email\":\"user@example.com\",\"password\":\"secure123\"}"
+//
+// Example refresh:
+// curl -X POST http://localhost:4000/refresh -H "Content-Type: application/json" -d "{\"refreshToken\":\"<token>\"}"
+//
+// Example protected route:
+// curl http://localhost:4051/me -H "Authorization: Bearer <access-token>"
 const express = require("express");
 const jwt = require("jsonwebtoken");
 
