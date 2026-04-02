@@ -1,0 +1,108 @@
+Here’s the way to test this in Postman, end‑to‑end.
+
+1. Start the server
+
+In your terminal:
+
+node your-file-name.js
+
+You should see:
+JWT demo server running @ http://localhost:4000
+
+All Postman requests will go to `http://localhost:4000`.
+
+2. Test `/login` (get access + refresh tokens)
+
+1. In Postman, click New → HTTP Request.  
+2. Set:
+   - Method: POST
+   - URL: `http://localhost:4000/login`
+3. Go to the Headers tab:
+   - Key: `Content-Type`
+   - Value: `application/json`
+4. Go to the Body tab:
+   - Select raw
+   - Choose JSON from the dropdown on the right.
+   - Paste:
+
+    json
+    {
+    "email": "email@email.com",
+    "password": "pass@123"
+    }
+
+5. Click Send.
+
+You should get a JSON response like:
+
+json
+{
+  "success": true,
+  "message": "login successful",
+  "accessToken": "eyJhbGciOi...",
+  "refreshToken": "eyJhbGciOi..."
+}
+
+Copy both `accessToken` and `refreshToken` somewhere (or keep the tab open).
+
+
+3. Test `/me` (protected route with access token)
+
+1. Create a new request in Postman.  
+2. Set:
+   - Method: GET
+   - URL: `http://localhost:4000/me`
+3. Go to the Authorization tab:
+   - Type: Bearer Token
+   - Token: paste the `accessToken` from the `/login` response. [reqbin](https://reqbin.com/req/c-hlt4gkzd/curl-bearer-token-authorization-header-example)
+   (Internally this sets `Authorization: Bearer <token>` for you.)
+4. Click Send.
+
+Expected response:
+
+json
+{
+  "success": true,
+  "message": "Protected user route",
+  "user": {
+    "userId": 101,
+    "email": "email@email.com",
+    "role": "member",
+    "iat": 1234567890,
+    "exp": 1234569999,
+    "iss": "jwt-example"
+  }
+}
+
+
+If the token expires, you’ll get `"Access token has expired"`.
+
+4. Test `/refresh` (get a new access token from refresh token)
+
+1. Create another request.  
+2. Set:
+   - Method: POST
+   - URL: `http://localhost:4000/refresh`
+3. Headers:
+   - `Content-Type: application/json`
+4. Body → raw → JSON, paste:
+
+json
+{
+  "refreshToken": "PASTE_YOUR_REFRESH_TOKEN_HERE"
+}
+
+
+Replace the value with the `refreshToken` from `/login`.
+
+5. Click Send.
+
+If the refresh token is valid and still in the `refreshTokens` array, you’ll get:
+
+json
+{
+  "success": true,
+  "accessToken": "NEW_ACCESS_TOKEN_HERE"
+}
+
+You can now use this new `accessToken` in the Authorization → Bearer Token field to call `/me` again.
