@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const app = express();
 app.use(express.json());
 
-const secretKey = "Mysecretkey";
+const secretKey = "Mysecretkey123";
 const refreshSecretKey = "MyNewsecretkey";
 
 //in-memory storage for refresh token
