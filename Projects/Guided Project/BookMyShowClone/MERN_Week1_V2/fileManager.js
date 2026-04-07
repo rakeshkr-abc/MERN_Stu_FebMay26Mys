@@ -139,7 +139,6 @@ module.exports = {
     readBookingsAsync,
     readBookingsSync,
     writeBookingsAsync,
-    writeFileSync,
     appendBookingAsync,
     renameLogFileSync,
     deleteArchivedLogSync,
