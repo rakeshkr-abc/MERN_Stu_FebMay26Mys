@@ -7,7 +7,7 @@ const {
     getMovieById,
     addMovie,
     updateMovie,
-    deletedMovie
+    deleteMovie
 } = require("../controllers/movieController");
 const roleMiddleware = require("../middleware/roleMiddleware");
 
