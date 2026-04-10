@@ -41,8 +41,9 @@ async function runCrudDemo(){
         console.log("Read with findOne(): ",oneDemoStudent);
 
         //Update using findByIdAndUpdate()
+        const id = '69d882a41b1a446184ed04bf';
         const updatedStudent = await Student.findByIdAndUpdate(
-            secondStudent._id,
+            id,
             {age:20},
             {new:true}
         );
