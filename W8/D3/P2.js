@@ -1,4 +1,4 @@
-// Pre-save and post-save hooks
+// Pre-save and post-save hooks in mongo
 const mongoose = require("mongoose");
 
 async function runSaveHookDemo(){
