@@ -23,7 +23,7 @@ async function runRemoveHookDemo(){
         // await course.save();
         // console.log("Document save successfully");
 
-        await course.deleteOne();
+        await Course.deleteOne({title:"Database design basics"});
         console.log("Document Deleted successfully");
 
         await mongoose.connection.close();
