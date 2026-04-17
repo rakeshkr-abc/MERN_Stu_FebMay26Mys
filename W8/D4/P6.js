@@ -37,7 +37,7 @@ async function generateOTP(userId) {
         {
             userId,
             otp,
-            expiresAt:new Date(Date.now() + 60000),
+            expiresAt:new Date(Date.now() + 20000),
             attempts:0
         },
         {
@@ -64,12 +64,12 @@ async function verifyOTP(userId,enteredOtp) {
     return "Invalid";
 }
 async function main() {
-    // await generateOTP("user1");
+    await generateOTP("user1");
 
     const storedRecord = await OTP.findOne({userId:"user1"});
     const userEnteredOtp = storedRecord.otp;
 
-    const result = await verifyOTP("user1","998579");
+    const result = await verifyOTP("user1","248290");
     console.log(result);
     await mongoose.connection.close();
 }
