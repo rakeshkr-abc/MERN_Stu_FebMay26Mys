@@ -1,3 +1,4 @@
+// MERN_Stu_FebMay26Mys\W4\D5\portfolio-project\js\features\developer-stats.js
 /*
 File: developer-stats.js
 Description: Fetches developer statistics from a JSON file and renders them into the portfolio.

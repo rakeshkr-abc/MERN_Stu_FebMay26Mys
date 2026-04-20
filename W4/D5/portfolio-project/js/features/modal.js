@@ -1,3 +1,4 @@
+// MERN_Stu_FebMay26Mys\W4\D5\portfolio-project\js\features\modal.js
 function initModal(){
     const modal = document.getElementById("contact-modal");
     const modalContent = document.getElementById("modal-content");

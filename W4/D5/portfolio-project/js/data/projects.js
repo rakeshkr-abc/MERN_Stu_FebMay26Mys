@@ -1,3 +1,4 @@
+// MERN_Stu_FebMay26Mys\W4\D5\portfolio-project\js\data\projects.js
 const projectsData = [
   {
     id: 1,

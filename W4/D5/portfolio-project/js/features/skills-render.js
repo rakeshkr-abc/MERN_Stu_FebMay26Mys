@@ -1,3 +1,4 @@
+// MERN_Stu_FebMay26Mys\W4\D5\portfolio-project\js\features\skills-render.js
 function renderSkills(){
     const skillsContainer = document.getElementById("skills-container");
 
