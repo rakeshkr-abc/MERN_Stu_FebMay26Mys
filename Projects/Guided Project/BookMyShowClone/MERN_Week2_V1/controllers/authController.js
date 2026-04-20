@@ -4,7 +4,7 @@ const users = require("../data/users");
 
 const CustomError = require("../utils/CustomError");
 
-const {JWT_SECRET} = require("../middleware/authMiddleware");
+const { JWT_SECRET } = require("../middleware/authMiddleware");
 
 function loginUser(req,res,next){
     try{
