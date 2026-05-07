@@ -8,22 +8,22 @@
 // event.target.value: the current text typed by the user
 import { useState } from "react";
 export function EventObject() {
-  const [text, setText] = useState("");
+  const [myText, setMyText] = useState("");
   const handleChange = (event) => {
     const currentValue = event.target.value;
     console.log(currentValue);
-    setText(currentValue);
+    setMyText(currentValue);
   };
   return(
     <section>
     <h2>Event object</h2>
     <input
-      type="password"
-      value={text}
+      type="text"
+      value={myText}
       onChange={handleChange}
       placeholder="Type something"
     />
-    <p>You typed: {text}</p>
+    <p>You typed: {myText}</p>
   </section>
   )
 }
