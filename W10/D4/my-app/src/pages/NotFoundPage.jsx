@@ -1,12 +1,7 @@
 export function NotFoundPage() {
     return (
         <div>
-            <h3>class cls
-                 {
-                constructor(parameters) {
-                    
-                }
-            }/h3>
+            <h3>Not found page</h3>
         </div>
     );
 }
