@@ -9,6 +9,7 @@
 import { useState } from "react";
 export function EventObject() {
   const [myText, setMyText] = useState("");
+  
   const handleChange = (event) => {
     const currentValue = event.target.value;
     console.log(currentValue);
