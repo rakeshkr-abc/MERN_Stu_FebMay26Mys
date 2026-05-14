@@ -5,7 +5,8 @@ const users = [
     { id:1, role: "Student"},
     { id:2, role: "Trainer"},
     { id:3, role: "Admin"},
-    { id:4, role: "Developer"}
+    { id:4, role: "Developer"},
+    { id:5, role: "Developer"}
 ];
 
 export function FunctionComp(){
