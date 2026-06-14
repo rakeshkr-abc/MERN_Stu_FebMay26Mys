@@ -95,7 +95,7 @@ import AdminLayout from "../layouts/AdminLayout";
 
 /*
 =========================================================
-LAZY LOADING (performance)
+LAZY LOADING
 
 
 WHY?
@@ -161,6 +161,8 @@ USER
 
 
 ADMIN
+
+
 /admin
 ├── dashboard
 └── movies
@@ -235,9 +237,7 @@ export default function AppRoutes() {
               <Bookings />
             </ProtectedRoute>
           }
-        >
-          <Route path="/bookings" element={<Bookings />} />
-        </Route>
+        />
 
         {/*
         =================================================
@@ -257,7 +257,7 @@ export default function AppRoutes() {
         <Route
           path="/admin"
           element={
-            <ProtectedRoute requiredRole="admin">
+            <ProtectedRoute roles={["admin"]}>
               <AdminLayout />
             </ProtectedRoute>
           }
