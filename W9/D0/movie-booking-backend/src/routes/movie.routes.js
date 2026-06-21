@@ -14,8 +14,17 @@ const { authorize } = require("../middleware/role.middleware");
 // Public route
 router.get("/", movieController.getMovies);
 
+//get movie by Id (NEW)
+router.get("/:id", movieController.getMovieById);
+
 // Admin-only route
-router.post("/", protect, authorize("admin"), validate(movieSchema), movieController.createMovie);
+router.post(
+  "/",
+  protect,
+  authorize("admin"),
+  validate(movieSchema),
+  movieController.createMovie,
+);
 router.put("/:id", protect, authorize("admin"), movieController.updateMovie);
 router.delete("/:id", protect, authorize("admin"), movieController.deleteMovie);
 

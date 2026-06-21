@@ -40,6 +40,24 @@ exports.getMovies = async (req, res, next) => {
 
 /*
 -----------------------------------------
+GET MOVIE BY ID
+-----------------------------------------
+*/
+exports.getMovieById = async (req, res, next) => {
+  try {
+    const movie = await movieService.getMovieById(req.params.id);
+
+    res.status(200).json({
+      success: true,
+      data: movie,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+/*
+-----------------------------------------
 UPDATE MOVIE
 -----------------------------------------
 */
