@@ -46,7 +46,7 @@ Real-Time Statistics
 Charts & Insights
 
 
-=========================================================
+=======================================================
 */
 
 import { useEffect, useState } from "react";
