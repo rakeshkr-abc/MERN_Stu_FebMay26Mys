@@ -136,6 +136,8 @@ const Dashboard = lazy(() => import("../pages/admin/Dashboard"));
 
 const MovieManagement = lazy(() => import("../pages/admin/MovieManagement"));
 
+const MovieDetails = lazy(() => import("../pages/MovieDetails"));
+
 /*
 =========================================================
 APP ROUTES
@@ -210,6 +212,8 @@ export default function AppRoutes() {
           <Route path="/" element={<Home />} />
 
           <Route path="/movies" element={<Movies />} />
+
+          <Route path="/movies/:id" element={<MovieDetails />} />
 
           <Route path="/login" element={<Login />} />
 

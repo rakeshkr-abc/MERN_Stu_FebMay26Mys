@@ -1,8 +1,11 @@
 // src/components/MovieCard.jsx
+import { useNavigate } from "react-router-dom";
 
 export default function MovieCard({ movie }) {
+  const navigate = useNavigate();
+
   return (
-    <div style={styles.card}>
+    <div style={styles.card} onClick={() => navigate(`/movies/${movie._id}`)}>
       <h3>{movie.title}</h3>
 
       <p>
@@ -27,6 +30,7 @@ export default function MovieCard({ movie }) {
 
 const styles = {
   card: {
+    cursor: "pointer",
     background: "#fff",
     border: "1px solid #ddd",
     borderRadius: "8px",
