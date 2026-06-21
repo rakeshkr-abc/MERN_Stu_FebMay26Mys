@@ -76,9 +76,15 @@ export default function Navbar() {
         </NavLink>
 
         {isAuthenticated && (
-          <NavLink to="/bookings" style={getNavStyle}>
-            Bookings
-          </NavLink>
+          <>
+            <NavLink to="/bookings" style={getNavStyle}>
+              Book Tickets
+            </NavLink>
+
+            <NavLink to="/my-bookings" style={getNavStyle}>
+              My Bookings
+            </NavLink>
+          </>
         )}
 
         {user?.role === "admin" && (
